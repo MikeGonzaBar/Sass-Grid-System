@@ -1,0 +1,21 @@
+@import 'variables';
+
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+.grid {
+	>div {
+		padding: 10px 20px;
+		box-sizing: border-box;
+		float: left;
+		border: solid 1px $colorOfBorder;
+		text-align: center;
+    background-color: $colorOfBackground;
+	}
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}

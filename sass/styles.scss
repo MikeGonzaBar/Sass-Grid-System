@@ -1,0 +1,70 @@
+@import 'formatGrids';
+
+@mixin ipad{
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone{
+  @media screen and (max-width: 414px) {
+    @content;
+  }
+}
+
+.col-12 {
+	width: 100%;
+}
+.col-6 {
+	width: 50%;
+}
+.col-4 {
+	width: 33.333%;
+}
+.col-3 {
+	width: 25%;
+}
+.col-2 {
+	width: 16.667%;
+}
+.col-1_5 {
+	width: 12.5%;
+}
+.col-1 {
+	width: 8.333%;
+}
+
+@include ipad{
+  .col-2 {
+		width: 33.333%;
+	}
+	.col-1 {
+		width: 33.333%;
+	}
+	.col-1_5 {
+		width: 25%;
+	}
+}
+
+@include phone{
+  .col-4 {
+		&:nth-child(-n+2) {
+			width: 50%;
+		}
+		&:nth-child(3) {
+			width: 100%;
+		}
+	}
+	.col-3 {
+		width: 50%;
+	}
+	.col-2 {
+		width: 50%;
+	}
+	.col-1_5 {
+		width: 50%;
+	}
+	.col-1 {
+		width: 50%;
+	}
+}
